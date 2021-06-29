@@ -3,33 +3,9 @@
 <html>
 <head>
   <title>SQL Injection Prevention</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-  <script type="text/javascript">
-    $(function () {
-        $("#username").keypress(function (e) {
-            var keyCode = e.keyCode || e.which;
- 
-            $("#lblError").html("");
- 
-            //Regex for Valid Characters i.e. Alphabets and Numbers.
-            var regex = /^[A-Za-z]+$/;
- 
-            //Validate TextBox value against the Regex.
-            var isValid = regex.test(String.fromCharCode(keyCode));
-            if (!isValid) {
-                $("#lblError").html("Only Alphabets allowed.");				
-				var alerted = localStorage.getItem('alerted') || '';
-    				if (alerted != 'yes') {
-    					 alert("Only Alphabets allowed.");
-     					localStorage.setItem('alerted','yes');
-   					 }
-            }
- 
-            return isValid;
-        });
-    });
-</script>
+  <script type="text/javascript" src="/js/validation.js"></script>  
 </head>
 <body>
   <div class="header">
