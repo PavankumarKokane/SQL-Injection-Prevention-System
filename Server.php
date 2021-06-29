@@ -13,6 +13,9 @@ $db = mysqli_connect('localhost', 'root', '', 'registration');
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
   // receive all input values from the form
+  $username = stripcslashes($username);
+  $email = stripcslashes($email);
+  $password_1 = stripcslashes($password_1);
   $username = mysqli_real_escape_string($db, $_POST['username']);
   $usermatch = mysqli_real_escape_string($db, $_POST['username']);
   $email = mysqli_real_escape_string($db, $_POST['email']);
@@ -59,6 +62,8 @@ if (isset($_POST['reg_user'])) {
 
 // LOGIN USER
 if (isset($_POST['login_user'])) {
+  $username = stripcslashes($username);
+  $password = stripcslashes($password);
   $username = mysqli_real_escape_string($db, $_POST['username']);
   $password = mysqli_real_escape_string($db, $_POST['password']);
   $usermatch = mysqli_real_escape_string($db, $_POST['username']);

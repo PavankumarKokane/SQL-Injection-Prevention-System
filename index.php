@@ -20,7 +20,6 @@
     <script type="text/javascript" src="/js/validation.js"></script>  
   </head>
 <body>
-
 <div class="header">
 	<h2>Home Page</h2>
 </div>
@@ -69,6 +68,7 @@
 
                                     if(isset($_GET['search']))
                                     {
+                                        $filtervalues = stripcslashes($search);
                                         $filtervalues = mysqli_real_escape_string($con, $_GET['search']);
                                         
                                        $query = "SELECT * FROM product WHERE CONCAT(Categories,product_name,prize) LIKE '%$filtervalues%' ";
