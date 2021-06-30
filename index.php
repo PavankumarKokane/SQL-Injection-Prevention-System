@@ -68,7 +68,7 @@
 
                                     if(isset($_GET['search']))
                                     {
-                                        $filtervalues = stripcslashes($search);
+                                        
                                         $filtervalues = mysqli_real_escape_string($con, $_GET['search']);
                                         
                                        $query = "SELECT * FROM product WHERE CONCAT(Categories,product_name,prize) LIKE '%$filtervalues%' ";
